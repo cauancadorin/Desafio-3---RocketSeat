@@ -21,7 +21,29 @@
     </div>
 
     <div class="container">
-       
+        <div class="form-about">
+            <h1>Crie seu convite</h1>
+            <div class="flex-row">
+                <img src="/assets/icons/calendar.svg" alt="Ícone de um calendário">
+                <h2>Sobre o evento</h2>
+            </div>
+            <form action="submit" method="post">
+                <label for="title">Título</label>
+                <input type="text" name="title" id="title" placeholder="Nome do Evento" required>
+                <label for="s.date">Início</label>
+                <input type="date" name="s.date" id="s.date" required>
+                <label for="e.date">Fim</label>
+                <input type="date" name="e.date" id="e.date" required>
+                <label for="type">Tipo</label>
+                <input type="radio" name="type" id="presencial">
+                <input type="radio" name="type" id="online">
+                <label for="local">Local</label>
+                <input type="text" name="local" id="local" placeholder="Link ou endereço" required>
+
+                <label for="description">Descrição</label>
+                <textarea name="description" id="description" placeholder="Escreva sobre os detalhes do evento" required></textarea>
+                <button type="submit">Gerar convite</button>
+        </div>
     </div>
 </body>
 
