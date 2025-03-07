@@ -27,12 +27,12 @@
     --shape-hover: #383D42;
     --text-body: #C8CDD0;
     --text-heading: #F9F9F9; 
-    --logo: normal 2.5rem/auto "Leckerli One", sans-serif;
-    --heading-md: bold 1.75rem/auto "Baloo 2", sans-serif;
-    --heading-sm: bold 1.125rem/auto "Baloo 2", sans-serif;
-    --body-md: 600 1rem/auto "Open Sans", sans-serif;
-    --body-sm: 600 0.875rem/auto "Open Sans", sans-serif;
-    --body-xs: 600 0.75rem/auto "Open Sans", sans-serif;
+    --logo: normal 2.5rem/1 Leckerli One, sans-serif;
+    --heading-md: bold 1.75rem/1 Baloo2, sans-serif;
+    --heading-sm: bold 1.125rem/1 Baloo2, sans-serif;
+    --body-md: 600 1rem/1 OpenSans, sans-serif;
+    --body-sm: 600 0.875rem/1 OpenSans, sans-serif;
+    --body-xs: 600 0.75rem/1 OpenSans, sans-serif;
 }
 
 html {
@@ -49,6 +49,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     width: 1280px;
     height: 768px;
     gap: 20px;
@@ -56,7 +57,45 @@ body {
     border-radius: 20px;
 }
 
-.image > img {
+.image img:nth-child(4), h1, span {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+}
+
+.image img:nth-child(4) {
+    top: 52px;
+    left: 52px;
+    width: 48px;
+    height: 48px;
+}
+
+.image h1 {
+    color: var(--pink);
+    font: var(--logo);
+    top: 122px;
+    left: 52px;
+}
+
+.image span {
+    color: var(--text-heading);
+    top: 174px;
+    left: 52px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    text-shadow: 
+    -1px -1px 0 black,  
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}
+
+.image img:nth-child(3) {
+    display: flex;
+    position: relative;
     height: 728px;
     width: 400px;
     object-fit: cover;
