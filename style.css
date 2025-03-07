@@ -35,9 +35,37 @@
     --body-xs: 600 0.75rem/auto "Open Sans", sans-serif;
 }
 
-body {
+html {
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1280px;
+    height: 768px;
+    gap: 20px;
+    background-color: var(--shape-background);
+    border-radius: 20px;
+}
+
+.image > img {
+    height: 728px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.container {
+    width: 820px;
+    height: 45.5rem;
+    border-radius: 12px;
+    background-color: var(--shape-body);
 }
