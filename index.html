@@ -30,16 +30,21 @@
             <form action="submit" method="post">
                 <label for="title">Título</label>
                 <input type="text" name="title" id="title" placeholder="Nome do Evento" required>
-                <label for="s.date">Início</label>
-                <input type="date" name="s.date" id="s.date" required>
-                <label for="e.date">Fim</label>
-                <input type="date" name="e.date" id="e.date" required>
-                <label for="type">Tipo</label>
-                <input type="radio" name="type" id="presencial">
-                <input type="radio" name="type" id="online">
-                <label for="local">Local</label>
-                <input type="text" name="local" id="local" placeholder="Link ou endereço" required>
-
+                <div class="date">
+                    <label for="s.date">Início</label>
+                    <label for="e.date">Fim</label>
+                    <input type="datetime-local" name="s.date" id="s.date" required>
+                    <input type="datetime-local" name="e.date" id="e.date" required>
+                </div>
+                <div class="radio">
+                    <label for="type">Tipo</label>
+                    <label for="local">Local</label>
+                    <div class="slider">
+                        <input type="radio" name="type" id="presencial">
+                        <input type="radio" name="type" id="online">
+                    </div>
+                    <input type="text" name="local" id="local" placeholder="Link ou endereço" required>
+                </div>                
                 <label for="description">Descrição</label>
                 <textarea name="description" id="description" placeholder="Escreva sobre os detalhes do evento" required></textarea>
                 <button type="submit">Gerar convite</button>

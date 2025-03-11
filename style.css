@@ -175,8 +175,29 @@ body {
     border: 1px solid var(--input-stroke);
     border-radius: 8px;
     height: 136px;
+    padding-top: 16px;
 }
 
-.form-about input::placeholder {
+textarea::placeholder {
+    font: var(--body-sm);
     color: var(--input-placeholder);
+    font-weight: 100;
 }
+
+input::placeholder {
+    font: var(--body-sm);
+    color: var(--input-placeholder);
+    font-weight: 100;
+}
+
+.date, .radio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
