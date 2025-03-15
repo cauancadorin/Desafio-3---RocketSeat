@@ -126,7 +126,7 @@ body {
     font: var(--heading-md);
 }
 
-.container img[src="./assets/icons/calendar.svg"], .container img[src="./assets/icons/paintbrush-vertical.svg"] {
+.container img[src="./assets/icons/calendar.svg"], .container img[src="./assets/icons/paintbrush-vertical.svg"], .container img[src="./assets/icons/contact.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 12px;
@@ -147,7 +147,6 @@ body {
 
 .flex-row2 {
     padding-top: 48px;
-    padding-bottom: 24px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -215,7 +214,7 @@ input::placeholder {
     color: var(--input-placeholder);
 }
 
-.date, .radio {
+.date, .radio, .infos {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
