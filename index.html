@@ -29,24 +29,39 @@
             </div>
             <form action="submit" method="post">
                 <label for="title">Título</label>
-                <input type="text" name="title" id="title" placeholder="Nome do Evento" required>
+                <input type="text" name="title" id="title" placeholder="Nome do evento" required>
                 <div class="date">
                     <label for="s.date">Início</label>
                     <label for="e.date">Fim</label>
-                    <input type="datetime-local" name="s.date" id="s.date" required>
-                    <input type="datetime-local" name="e.date" id="e.date" required>
+                    <input type="datetime-local" name="s.date" id="s.date" placeholder="DD/MM/AAAA --:--" required>
+                    <input type="datetime-local" name="e.date" id="e.date" placeholder="DD/MM/AAAA --:--" required>
                 </div>
                 <div class="radio">
                     <label for="type">Tipo</label>
-                    <label for="local">Local</label>
-                    <div class="slider">
-                        <input type="radio" name="type" id="presencial">
+                    <label for="local">Local</label> 
+                    <div class="toggle-group">
+                        <input type="radio" name="type" id="presencial" checked>
                         <input type="radio" name="type" id="online">
+                        <div class="slider"></div>
+                        <label for="presencial">
+                            <img src="./assets/icons/building-2.svg" alt="Ícone de um prédio corporativo" class="icon1" id="icon">
+                            <img src="./assets/icons/building-2blue.svg" alt="Ícone de um prédio corporativo" class="icon2" id="icon">
+                            Presencial
+                        </label>
+                        <label for="online">
+                            <img src="./assets/icons/video.svg" alt="Ícone de uma câmera" class="icon1" id="icon">
+                            <img src="./assets/icons/videoblue.svg" alt="Ícone de uma câmera" class="icon2" id="icon">
+                            Online
+                        </label>
                     </div>
                     <input type="text" name="local" id="local" placeholder="Link ou endereço" required>
-                </div>                
+                </div>
                 <label for="description">Descrição</label>
                 <textarea name="description" id="description" placeholder="Escreva sobre os detalhes do evento" required></textarea>
+                <div class="flex-row2">
+                    <img src="./assets/icons/paintbrush-vertical.svg" alt="Ícone de um pincel">
+                    <h2>Personalização</h2>
+                </div>
                 <button type="submit">Gerar convite</button>
         </div>
     </div>

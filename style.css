@@ -27,12 +27,13 @@
     --shape-hover: #383D42;
     --text-body: #C8CDD0;
     --text-heading: #F9F9F9; 
-    --logo: normal 2.5rem/1 Leckerli One, sans-serif;
-    --heading-md: bold 1.75rem/1 Baloo2, sans-serif;
-    --heading-sm: bold 1.125rem/1 Baloo2, sans-serif;
-    --body-md: 600 1rem/1 OpenSans, sans-serif;
-    --body-sm: 600 0.875rem/1 OpenSans, sans-serif;
-    --body-xs: 600 0.75rem/1 OpenSans, sans-serif;
+    --logo: normal 2.5rem/1 "Leckerli One", sans-serif;
+    --heading-md: bold 1.75rem/1 "Baloo 2", sans-serif;
+    --heading-sm: bold 1.125rem/1 "Baloo 2", sans-serif;
+    --body-md: 400 1rem/1 "Open Sans", sans-serif;
+    --body-sm: 400 0.875rem/1 "Open Sans", sans-serif;
+    --body-sm-t: 200 0.875rem/1 "Open Sans", sans-serif;
+    --body-xs: 400 0.75rem/1 "Open Sans", sans-serif;
 }
 
 html {
@@ -107,9 +108,10 @@ body {
     height: 45.5rem;
     border-radius: 12px;
     background-color: var(--shape-body);
-    padding-top: 80px;
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-top: 90px;
+    padding-left: 130px;
+    padding-right: 130px;
+    padding-bottom: 80px;
     overflow: hidden;
     overflow-y: auto;
     box-sizing: border-box;
@@ -122,10 +124,9 @@ body {
 .container h1 {
     color: var(--text-heading);
     font: var(--heading-md);
-    margin-bottom: 20px;
 }
 
-.container img[src="/assets/icons/calendar.svg"] {
+.container img[src="./assets/icons/calendar.svg"], .container img[src="./assets/icons/paintbrush-vertical.svg"] {
     width: 24px;
     height: 24px;
     margin-right: 12px;
@@ -137,7 +138,15 @@ body {
 }
 
 .flex-row {
-    padding-top: 40px;
+    padding-top: 50px;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flex-row2 {
+    padding-top: 48px;
     padding-bottom: 24px;
     display: flex;
     flex-direction: row;
@@ -145,6 +154,11 @@ body {
 }
 
 .flex-row h2 {
+    color: var(--text-heading);
+    font: var(--heading-sm);
+}
+
+.flex-row2 h2 {
     color: var(--text-heading);
     font: var(--heading-sm);
 }
@@ -176,18 +190,29 @@ body {
     border-radius: 8px;
     height: 136px;
     padding-top: 16px;
+    resize: none;
+}
+
+input:focus{
+    border-color: var(--brand-light);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+textarea:focus{
+    border-color: var(--brand-light);
+    outline: none;
+    transition: all 0.3s ease;
 }
 
 textarea::placeholder {
-    font: var(--body-sm);
+    font: var(--body-md);
     color: var(--input-placeholder);
-    font-weight: 100;
 }
 
 input::placeholder {
-    font: var(--body-sm);
+    font: var(--body-md);
     color: var(--input-placeholder);
-    font-weight: 100;
 }
 
 .date, .radio {
@@ -201,3 +226,79 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     -webkit-appearance: none;
 }
 
+input[type="datetime-local"] {
+    font: var(--body-md);
+    color: var(--input-placeholder);
+    text-transform: uppercase;
+}
+
+#icon {
+    width: 16px;
+    height: 16px;
+}
+
+.toggle-group {
+    position: relative;
+    display: flex;
+    width: 272px;
+    height: 48px;
+    background: var(--input-base);
+    border: 1px solid var(--input-stroke);
+    border-radius: 8px;
+    padding: 4px;
+    gap: 4px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slider {
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    background: var(--shape-button);
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out;
+    left: 4px;
+}
+
+.toggle-group input {
+    display: none;
+}
+
+.toggle-group label {
+    position: relative;
+    width: 130px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font: var(--body-sm-t);
+    color: var(--text-body);
+    cursor: pointer;
+    z-index: 2;
+}
+
+#online:checked ~ .slider {
+    transform: translateX(132px);
+}
+
+#presencial:checked ~ label[for="presencial"],
+#online:checked ~ label[for="online"] {
+    font: var(--body-sm);
+    color: var(--text-heading);
+}
+
+.icon2 {
+    display: none;
+}
+
+#presencial:checked ~ label[for="presencial"] .icon2,
+#online:checked ~ label[for="online"] .icon2 {
+    display: block;
+}
+
+#presencial:checked ~ label[for="presencial"] .icon1,
+#online:checked ~ label[for="online"] .icon1 {
+    display: none;
+}
