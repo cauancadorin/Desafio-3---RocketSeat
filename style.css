@@ -199,7 +199,7 @@ input:focus{
 }
 
 .colors input:checked {
-    box-shadow: 0 0 0 2px var(--brand-light); /* Apenas a borda externa muda */
+    box-shadow: 0 0 0 2px var(--brand-light);
 }
 
 textarea:focus{
